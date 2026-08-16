@@ -1,4 +1,6 @@
-export type TaskStatus = "pending" | "in_progress" | "completed";
+export const TASK_STATUSES = ["pending", "in_progress", "done"] as const;
+
+export type TaskStatus = (typeof TASK_STATUSES)[number];
 
 export interface Task {
   id: string;
@@ -22,5 +24,3 @@ export interface CreateTaskDto {
  * PATCH /api/tasks/:id - optional body
  */
 export type UpdateTaskDto = Partial<CreateTaskDto>;
-
-
