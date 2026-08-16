@@ -1,0 +1,40 @@
+{
+  "name": "tudos-api",
+  "version": "1.0.0",
+  "description": "Todo REST API — Express 5 + TypeScript",
+  "license": "ISC",
+  "author": "HaktanAlbayrak",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false --env-file=.env src/index.ts",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "test": "node --test --experimental-strip-types \"src/**/*.test.ts\"",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "check:unsafe": "biome check --write --unsafe .",
+    "ci": "biome ci . && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.8",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}

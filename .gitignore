@@ -1,0 +1,54 @@
+# --- Dependencies ---
+node_modules/
+.pnpm-store/
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/versions
+
+# --- Build output ---
+dist/
+build/
+*.tsbuildinfo
+
+# --- Environment variables ---
+.env
+.env.*
+!.env.example
+
+# --- Log ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Test / coverage ---
+coverage/
+.nyc_output/
+
+# --- Cache ---
+.cache/
+.tmp/
+tmp/
+.eslintcache
+node_modules/.cache/
+
+# --- Editor ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.swp
+
+# --- Operating system ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Upload directory (if the app writes to it at runtime) ---
+uploads/
+!uploads/.gitkeep

@@ -1,0 +1,430 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "maxSize": 2097152,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/build",
+      "!**/coverage",
+      "!**/*.tsbuildinfo",
+      "!**/package-lock.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "useEditorconfig": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf",
+    "trailingNewline": true,
+    "bracketSpacing": true,
+    "expand": "auto"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "trailingCommas": "all",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "operatorLinebreak": "before"
+    },
+    "globals": []
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "trailingCommas": "none"
+    },
+    "parser": {
+      "allowComments": false,
+      "allowTrailingCommas": false
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "project": "recommended",
+      "test": "recommended"
+    },
+    "rules": {
+      "preset": "recommended",
+
+      "correctness": {
+        "preset": "recommended",
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedFunctionParameters": "error",
+        "noUnusedPrivateClassMembers": "error",
+        "noUndeclaredDependencies": "error",
+        "noPrivateImports": "error",
+        "noConstantCondition": "error",
+        "noGlobalDirnameFilename": "error",
+        "noProcessGlobal": "error",
+        "useParseIntRadix": "error"
+      },
+
+      "suspicious": {
+        "preset": "recommended",
+        "noExplicitAny": "error",
+        "noDoubleEquals": "error",
+        "noEqualsToNull": "error",
+        "noSelfCompare": "error",
+        "noVar": "error",
+        "noShadow": "error",
+        "noShadowRestrictedNames": "error",
+        "noEvolvingTypes": "error",
+        "noImplicitAnyLet": "error",
+        "noTsIgnore": "error",
+        "noDebugger": "error",
+        "noEmptyBlockStatements": "error",
+        "noConstantBinaryExpressions": "error",
+        "noMisrefactoredShorthandAssign": "error",
+        "noParametersOnlyUsedInRecursion": "error",
+        "noTemplateCurlyInString": "error",
+        "noSkippedTests": "error",
+        "noFocusedTests": "error",
+        "noImportCycles": "error",
+        "useAwait": "error",
+        "useErrorMessage": "error",
+        "useGuardForIn": "error",
+        "useIterableCallbackReturn": "error",
+        "useNumberToFixedDigitsArgument": "error",
+        "useStrictMode": "off",
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["error", "warn", "info"]
+          }
+        }
+      },
+
+      "style": {
+        "preset": "recommended",
+        "noNonNullAssertion": "error",
+        "noParameterAssign": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "noNegationElse": "error",
+        "noYodaExpression": "error",
+        "noDefaultExport": "off",
+        "noExportedImports": "error",
+        "noCommonJs": "off",
+        "noProcessEnv": "error",
+        "useConst": "error",
+        "useImportType": "error",
+        "useExportType": "error",
+        "useNodejsImportProtocol": "error",
+        "useNodeAssertStrict": "error",
+        "useNumberNamespace": "error",
+        "useAsConstAssertion": "error",
+        "useShorthandFunctionType": "error",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": { "syntax": "shorthand" }
+        },
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": { "style": "interface" }
+        },
+        "useDefaultParameterLast": "error",
+        "useDefaultSwitchClause": "error",
+        "useCollapsedIf": "error",
+        "useBlockStatements": "off",
+        "useThrowNewError": "error",
+        "useThrowOnlyError": "error",
+        "useTemplate": "error",
+        "useSingleVarDeclarator": "error",
+        "useForOf": "error",
+        "useExplicitLengthCheck": "error",
+        "useReadonlyClassProperties": "error",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": true,
+            "requireAscii": true,
+            "filenameCases": ["kebab-case"]
+          }
+        },
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false,
+            "requireAscii": true,
+            "conventions": [
+              {
+                "selector": { "kind": "typeLike" },
+                "formats": ["PascalCase"]
+              },
+              {
+                "selector": { "kind": "typeParameter" },
+                "formats": ["PascalCase"]
+              },
+              {
+                "selector": { "kind": "enumMember" },
+                "formats": ["PascalCase", "CONSTANT_CASE"]
+              },
+              {
+                "selector": { "kind": "objectLiteralProperty" },
+                "formats": ["camelCase", "CONSTANT_CASE", "snake_case", "PascalCase"]
+              },
+              {
+                "selector": { "kind": "typeProperty" },
+                "formats": ["camelCase", "CONSTANT_CASE", "snake_case"]
+              },
+              {
+                "selector": { "kind": "function" },
+                "formats": ["camelCase", "PascalCase"]
+              },
+              {
+                "selector": { "kind": "variable" },
+                "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
+              }
+            ]
+          }
+        },
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "lodash": "Use native ES2024 utilities or a per-method import instead.",
+              "moment": "Use Temporal / Intl / date-fns instead.",
+              "request": "Deprecated. Use the global fetch().",
+              "querystring": "Legacy. Use node:url URLSearchParams instead."
+            }
+          }
+        }
+      },
+
+      "complexity": {
+        "preset": "recommended",
+        "noUselessUndefinedInitialization": "error",
+        "noUselessStringConcat": "error",
+        "noUselessTernary": "error",
+        "noVoid": "error",
+        "noCommaOperator": "error",
+        "noStaticOnlyClass": "error",
+        "useDateNow": "error",
+        "useSimplifiedLogicExpression": "error",
+        "useMaxParams": {
+          "level": "warn",
+          "options": { "max": 4 }
+        },
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": { "maxAllowedComplexity": 15 }
+        },
+        "noExcessiveLinesPerFunction": {
+          "level": "warn",
+          "options": { "maxLines": 80, "skipBlankLines": true, "skipIifes": true }
+        }
+      },
+
+      "performance": {
+        "preset": "recommended",
+        "noDelete": "error",
+        "noAccumulatingSpread": "error",
+        "noBarrelFile": "error",
+        "noReExportAll": "error",
+        "noNamespaceImport": "off",
+        "noAwaitInLoops": "warn",
+        "useTopLevelRegex": "warn"
+      },
+
+      "security": {
+        "preset": "recommended",
+        "noGlobalEval": "error",
+        "noSecrets": {
+          "level": "error",
+          "options": { "entropyThreshold": 45 }
+        }
+      },
+
+      "nursery": {
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error",
+        "noImpliedEval": "error",
+        "noExtendNative": "error",
+        "noLoopFunc": "error",
+        "noBaseToString": "error",
+        "noUselessTypeConversion": "error",
+        "noUnnecessaryTemplateExpression": "error",
+        "noNegationInEqualityCheck": "error",
+        "noExcessiveNestedCallbacks": "warn",
+        "useAwaitThenable": "error",
+        "useNullishCoalescing": "error",
+        "useStringStartsEndsWith": "error",
+        "useIncludes": "error",
+        "useArraySome": "error",
+        "useRegexpTest": "error",
+        "useNamedCaptureGroup": "warn",
+        "useImportsFirst": "error",
+        "useExhaustiveSwitchCases": "error",
+        "useConsistentTestIt": {
+          "level": "error",
+          "options": { "function": "test", "withinDescribe": "test" }
+        },
+        "useTestHooksOnTop": "error",
+        "useTestHooksInOrder": "error",
+        "noIdenticalTestTitle": "error",
+        "noConditionalExpect": "error"
+      }
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "preset": "recommended",
+      "source": {
+        "organizeImports": "on",
+        "useSortedKeys": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.test.ts", "**/*.spec.ts", "**/__tests__/**", "**/tests/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noNonNullAssertion": "off",
+            "noMagicNumbers": "off"
+          },
+          "suspicious": {
+            "noExplicitAny": "off",
+            "noConsole": "off"
+          },
+          "complexity": {
+            "noExcessiveLinesPerFunction": "off",
+            "noExcessiveCognitiveComplexity": "off"
+          },
+          "performance": {
+            "noAwaitInLoops": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/index.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/config/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noProcessEnv": "off",
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["**/routes/**", "**/controllers/**", "**/middlewares/**"],
+                    "message": "config is the lowest layer: it cannot import from upper layers."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/types/**"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off",
+            "noReExportAll": "off"
+          },
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": [
+                      "**/routes/**",
+                      "**/controllers/**",
+                      "**/middlewares/**",
+                      "**/config/**"
+                    ],
+                    "message": "types is a pure type layer: it cannot import runtime modules."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/middlewares/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["**/routes/**", "**/controllers/**"],
+                    "message": "The middleware layer cannot depend on routes/controllers."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/controllers/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["**/routes/**"],
+                    "message": "The controller layer cannot depend on routes; the dependency direction is routes -> controllers."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/tsconfig.json", "**/tsconfig.*.json", "**/.vscode/*.json", "**/*.jsonc"],
+      "json": {
+        "parser": {
+          "allowComments": true,
+          "allowTrailingCommas": true
+        }
+      }
+    }
+  ]
+}
